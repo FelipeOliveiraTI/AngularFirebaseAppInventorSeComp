@@ -6,12 +6,11 @@ angular.module("Pizzaria").controller("PizzariaController", function($scope){
 	$scope.pedidos = [];
 	// Initialize Firebase
  var config = {
-    apiKey: "AIzaSyCrpLTWeXX91TmFmqqLOYR-QDeNufX9Tro",
-    authDomain: "secomp-5bd82.firebaseapp.com",
-    databaseURL: "https://secomp-5bd82.firebaseio.com",
-    projectId: "secomp-5bd82",
-    storageBucket: "secomp-5bd82.appspot.com",
-    messagingSenderId: "280220638811"
+
+ 	
+   //coloque suas configuracoes aqui
+
+
   };
   //Funcao para inicializar a aplicacao
 firebase.initializeApp(config);
