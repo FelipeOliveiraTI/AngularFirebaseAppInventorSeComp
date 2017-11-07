@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="Pizzaria">
+<head>
+	<meta charset="UTF-8">
+	<title>Pizzaria da SeComp</title>
+	
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script src="js/pizza.module.js"></script>
+	<script src="js/pizza.controller.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+<body ng-controller="PizzariaController">
+	<button style="display: none;" id="btn_listar" ng-click="refreshDiv()" >Atualizar HTML</button>
+
+	<div class="container" >
+		<font color="#ffffff"><h1>{{titulo}}</h1></font>
+		
+		<div class="lista-pedidos" ng-repeat="item in pedidos">
+			<div class="pedido com-cartaz">
+				<h1>Mesa: {{item.mesa}}</h1>
+				<button class="del" title="Excluir" ng-click="remover(item.id)"></button>
+				<img src="img/receipt.png" alt=" Mesa do Pedido 12">
+				<ul>
+					<li><strong>Quantidade:</strong> {{item.quantidade}}</li>
+					<li><strong>Sabor:</strong> {{item.sabor}}</li>
+				</ul>
+			</div>	
+		</div>
+
+		<hr>
+		<!--
+		<form class="form-pedidos" ng-submit="cadastrar()">
+			<h1>Adicionar Pedido</h1>
+			<div class="form-campo pequeno">
+				<label for="titulo">Mesa</label>
+				<input type="number" id="titulo" ng-model="novoPedido.mesa">
+			</div>
+			<div class="form-campo pequeno">
+				<label for="ano">Quantidade</label>
+				<input type="number" id="ano" ng-model="novoPedido.quantidade">
+			</div>
+			<div class="form-campo medio">
+				<label for="produtora">Sabor</label>
+				<input type="text" id="produtora" ng-model="novoPedido.sabor" >
+			</div>
+			<footer>
+				<button type="reset">Limpar</button>
+				<button type="submit">Salvar</button>
+			</footer>
+		</form>-->
+	</div>
+
+
+	
+</body>
+</html>
